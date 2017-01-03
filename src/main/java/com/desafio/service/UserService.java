@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.desafio.dao.UserRepository;
 import com.desafio.entity.Phone;
 import com.desafio.entity.User;
+import com.desafio.security.MD5Generator;
 
 @Component
 public class UserService {
@@ -56,6 +57,7 @@ public class UserService {
 		this.setPhoneUser(user);
 		final String uuid = UUID.randomUUID().toString().replaceAll("-", "");
 		user.setId(uuid);
+		user.setPassword(MD5Generator.getMd5HashCode(user.getPassword()));
 		user.setCreated(today);
 		user.setModified(null);
 		user.setLast_login(today);

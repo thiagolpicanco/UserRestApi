@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import com.desafio.dao.UserRepository;
 import com.desafio.dto.LoginDTO;
 import com.desafio.entity.User;
+import com.desafio.security.MD5Generator;
 
 @Component
 public class LoginService {
@@ -15,10 +16,10 @@ public class LoginService {
 
 	public User login(final LoginDTO loginDTO) {
 		User user = userRepository.findByEmail((loginDTO.getEmail()));
-		if (null != user) {
+		final String password = MD5Generator.getMd5HashCode(loginDTO.getPassword());
+
+		if (null != user && user.getPassword().equals(password)) {
 			return user;
-		} else if (user.getPassword().equals(loginDTO.getPassword())) {
-			return null;
 		}
 		return null;
 	}

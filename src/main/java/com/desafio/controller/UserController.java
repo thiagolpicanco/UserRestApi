@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.desafio.dto.LoginDTO;
+import com.desafio.dto.MensagemErroDTO;
 import com.desafio.entity.User;
 import com.desafio.service.LoginService;
 import com.desafio.service.PhoneService;
@@ -20,6 +21,10 @@ import com.desafio.service.UserService;
 
 @RestController
 public class UserController {
+
+	final String INVALID_LOGIN = "Usuário e/ou senha inválidos";
+	final String NOT_AUTH = "Não autorizado";
+	final String INVALID_PHONE = "Telefone inválido";
 
 	@Autowired
 	private UserService userService;
@@ -36,7 +41,7 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/user", method = RequestMethod.POST)
-	public ResponseEntity<User> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
+	public ResponseEntity<?> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
 
 		if (userService.userExists(user.getEmail())) {
 			return new ResponseEntity<User>(HttpStatus.CONFLICT);
@@ -50,15 +55,15 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ResponseEntity<User> login(@RequestBody LoginDTO login, UriComponentsBuilder ucBuilder) {
+	public ResponseEntity<?> login(@RequestBody LoginDTO login, UriComponentsBuilder ucBuilder) {
 
 		User user = loginServiceService.login(login);
 
 		if (null != user) {
-
-			return new ResponseEntity<User>(HttpStatus.CREATED);
+			return new ResponseEntity<User>(user, HttpStatus.ACCEPTED);
 		} else {
-			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			MensagemErroDTO msg = new MensagemErroDTO(INVALID_LOGIN);
+			return new ResponseEntity<MensagemErroDTO>(msg, HttpStatus.NOT_FOUND);
 		}
 	}
 }

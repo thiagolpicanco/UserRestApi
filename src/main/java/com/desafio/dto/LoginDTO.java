@@ -11,6 +11,10 @@ public class LoginDTO {
 		this.email = email;
 		this.password = password;
 	}
+	
+	public LoginDTO() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getEmail() {
 		return email;
