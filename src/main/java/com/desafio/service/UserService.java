@@ -74,7 +74,7 @@ public class UserService {
 		user.setPassword(MD5Generator.getMd5HashCode(user.getPassword()));
 		user.setCreated(today);
 		user.setModified(null);
-		user.setLast_login(today);
+		user.setLast_login(null);
 		JwtUserDTO jwtUser = new JwtUserDTO(user.getId(), user.getEmail());
 		String token = jwtService.getToken(jwtUser);
 		user.setToken(token);
