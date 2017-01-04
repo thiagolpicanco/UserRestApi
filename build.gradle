@@ -47,11 +47,11 @@ task stage(type: Copy, dependsOn: [clean, build]) {
     from jar.archivePath
     into project.rootDir
     rename {
-        'app.jar'
+        'DesafioSpring.war'
     }
 }
 stage.mustRunAfter(clean)
 
 clean << {
-    project.file('app.jar').delete()
+    project.file('DesafioSpring.war').delete()
 }
