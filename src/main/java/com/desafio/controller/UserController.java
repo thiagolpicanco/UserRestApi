@@ -100,7 +100,7 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.CREATED);
 	}
 
-	@RequestMapping(value = "/login/", method = RequestMethod.POST)
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> login(@RequestBody LoginDTO login, UriComponentsBuilder ucBuilder) {
 		final User user = userService.findByEmail((login.getEmail()));
 		final String password = MD5Generator.getMd5HashCode(login.getPassword());
