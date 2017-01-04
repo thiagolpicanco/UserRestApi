@@ -31,7 +31,7 @@ http://{HOST}:{PORTA}/usuario/ via método POST (JSON)
         ]
     }
 
-http://localhost:{PORTA}/usuarios/f7efbd8a9f454db6a00ab9421382a479 - Lista dados do usuario do id fornecido
+
 ```
 
 
