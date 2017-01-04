@@ -49,7 +49,7 @@ public class UserController {
 	@Autowired
 	private JwtService jwtService;
 
-	@RequestMapping(value = "publico/users", produces = "application/JSON")
+	@RequestMapping(value = "/usuarios", produces = "application/JSON")
 	public List<User> listUsers() {
 		return userService.findAll();
 	}
