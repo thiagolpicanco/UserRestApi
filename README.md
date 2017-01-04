@@ -73,9 +73,8 @@ http://{HOST}/usuario/{ID} via método GET
 
 * ID - Identificador de usuario recebido no momento da cadastro
 
-#### Acesso via Token
+#### Para Acesso é necessario Token
 basta fazer a requisição enviando os parametros pelo Header
-
 
 x-auth-token: {Token de acesso recebido no momento do cadastro de usuario}
 
