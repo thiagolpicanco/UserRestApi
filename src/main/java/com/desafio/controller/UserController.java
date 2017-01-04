@@ -112,7 +112,7 @@ public class UserController {
 			return new ResponseEntity<MensagemErroDTO>(msg, HttpStatus.UNAUTHORIZED);
 		} else {
 			MensagemErroDTO msg = new MensagemErroDTO(INVALID_LOGIN);
-			return new ResponseEntity<MensagemErroDTO>(msg, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<MensagemErroDTO>(msg, HttpStatus.FORBIDDEN);
 		}
 
 	}
