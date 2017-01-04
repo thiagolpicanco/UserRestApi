@@ -71,7 +71,7 @@ http://{HOST}/usuario/{ID} via método GET
 
 ####Parametros
 
-* ID - Identificador de usuario recebido no momento da cadastro
+* ID - Identificador de usuario recebido no momento de cadastro do usuario
 
 #### Para Acesso é necessario Token
 basta fazer a requisição enviando os parametros pelo Header
