@@ -67,11 +67,9 @@ x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0Nzc4NjU1MDYsImlkI
 ```
 
 
-** Exemplos
+** Exemplo
 ```
-http://{HOST}:{PORTA}/usuario/{ID} - Lista notas com mês de referencia Fevereiro
-
-http://localhost:{PORTA}/usuarios/f7efbd8a9f454db6a00ab9421382a479 - Lista dados do usuario do id fornecido
+http://{HOST}:{PORTA}/usuarios/f7efbd8a9f454db6a00ab9421382a479 - Lista dados do usuario do id fornecido
 ```
 
 
