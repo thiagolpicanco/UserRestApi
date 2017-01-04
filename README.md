@@ -59,6 +59,8 @@ http://{HOST}:{PORTA}/usuario/{ID} via método GET
 
 #### Acesso via Token
 basta fazer a requisição enviando os parametros pelo Header
+
+
 x-auth-token: {Token de acesso recebido no momento do cadastro de usuario}
 
 * Exemplo de Envio no Header
