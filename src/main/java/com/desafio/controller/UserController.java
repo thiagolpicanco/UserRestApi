@@ -82,7 +82,7 @@ public class UserController {
 
 	}
 
-	@RequestMapping(value = "/usuario/", method = RequestMethod.POST)
+	@RequestMapping(value = "/usuario", method = RequestMethod.POST)
 	public ResponseEntity<?> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
 
 		if (userService.userExists(user.getEmail())) {
