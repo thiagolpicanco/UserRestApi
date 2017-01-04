@@ -1,6 +1,9 @@
 # REST API PARA CADASTRO/LOGIN/LISTAGEM de USUARIOS
 Esta é um Api desenvolvida para um desafio na linguagem JAVA
 
+## Testes e Avaliação da API
+Api Implantada no HEROKU
+https://desafioconcretesolutions.herokuapp.com/
 
 
 ## Funcionalidades
@@ -8,7 +11,7 @@ Esta é um Api desenvolvida para um desafio na linguagem JAVA
 ### Cadastro de Usuario
 Cria um usuario
 ```
-http://{HOST}:{PORTA}/usuario/ via método POST (JSON)
+http://{HOST}/usuario/ via método POST (JSON)
 ```
 ####Atributos JSON
  * name 
@@ -39,7 +42,7 @@ http://{HOST}:{PORTA}/usuario/ via método POST (JSON)
 ### Login
 Efetua login utilizando email e senha
 ```
-http://{HOST}:{PORTA}/login/ via método POST (JSON)
+http://{HOST}/login/ via método POST (JSON)
 ```
 ####Atributos JSON
 
@@ -50,7 +53,7 @@ http://{HOST}:{PORTA}/login/ via método POST (JSON)
 Lista os dados de perfil do usuario
 
 ```
-http://{HOST}:{PORTA}/usuario/{ID} via método GET
+http://{HOST}/usuario/{ID} via método GET
 ```
 
 ####Parametros
