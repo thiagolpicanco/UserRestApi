@@ -1,7 +1,7 @@
 # REST API PARA CADASTRO/LOGIN/LISTAGEM de USUARIOS
-Esta √© um Api desenvolvida para um desafio na linguagem JAVA
+Esta È um Api desenvolvida para um desafio na linguagem JAVA
 
-## Testes e Avalia√ß√£o da API
+## Testes e AvaliaÁ„o da API
 Api Implantada no HEROKU
 ```
 https://desafioconcretesolutions.herokuapp.com/
@@ -12,7 +12,7 @@ https://desafioconcretesolutions.herokuapp.com/
 ### Cadastro de Usuario
 Cria um usuario
 ```
-http://{HOST}/usuario/ via m√©todo POST (JSON)
+http://{HOST}/usuario/ via mÈtodo POST (JSON)
 ```
 ####Atributos JSON
  * name 
@@ -43,8 +43,20 @@ http://{HOST}/usuario/ via m√©todo POST (JSON)
 ### Login
 Efetua login utilizando email e senha
 ```
-http://{HOST}/login/ via m√©todo POST (JSON)
+http://{HOST}/login/ via mÈtodo POST (JSON)
 ```
+
+ ** Exemplo
+```
+{
+        "email": "cgs@globo.com",
+        "password": "24132"
+        
+}
+
+
+```
+
 ####Atributos JSON
 
 * email - Email fornecido no cadastro de usuario
@@ -54,7 +66,7 @@ http://{HOST}/login/ via m√©todo POST (JSON)
 Lista os dados de perfil do usuario
 
 ```
-http://{HOST}/usuario/{ID} via m√©todo GET
+http://{HOST}/usuario/{ID} via mÈtodo GET
 ```
 
 ####Parametros
@@ -62,7 +74,7 @@ http://{HOST}/usuario/{ID} via m√©todo GET
 * ID - Identificador de usuario recebido no momento da cadastro
 
 #### Acesso via Token
-basta fazer a requisi√ß√£o enviando os parametros pelo Header
+basta fazer a requisiÁ„o enviando os parametros pelo Header
 
 
 x-auth-token: {Token de acesso recebido no momento do cadastro de usuario}
@@ -75,7 +87,7 @@ x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0Nzc4NjU1MDYsImlkI
 
 ** Exemplo
 ```
-http://{HOST}:{PORTA}/usuarios/f7efbd8a9f454db6a00ab9421382a479 - Lista dados do usuario do id fornecido
+http://{HOST}/usuario/f7efbd8a9f454db6a00ab9421382a479 - Lista dados do usuario do id fornecido
 ```
 
 
