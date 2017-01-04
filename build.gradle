@@ -44,19 +44,14 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.6'
-}
-
-task stage(type: Copy, dependsOn: [clean, build]) {
-    from jar.archivePath
-    into project.rootDir
-    rename {
-        'app.jar'
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'Jar Compilado',
+        	'Implementation-Version': 1.0,
+        	'Main-Class': 'com.desafio.DesafioApiResTfulApplication'
     }
-}
-stage.mustRunAfter(clean)
-
-clean << {
-    project.file('app.jar').delete()
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
