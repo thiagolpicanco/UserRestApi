@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.desafio.dao.UserRepository;
+import com.desafio.dto.JwtUserDTO;
 import com.desafio.entity.Phone;
 import com.desafio.entity.User;
 import com.desafio.security.MD5Generator;
@@ -17,6 +18,9 @@ public class UserService {
 
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private JwtService jwtService;
 
 	/**
 	 * Método responsavel por listar todos os Usuarios no Banco
@@ -35,6 +39,16 @@ public class UserService {
 	 */
 	public User findByEmail(final String email) {
 		return userRepository.findByEmail(email);
+	}
+
+	/**
+	 * Método responsavel por buscar usuario por email;
+	 * 
+	 * @param email
+	 * @return Usuario encontado
+	 */
+	public User findByID(final String id) {
+		return userRepository.findById(id);
 	}
 
 	/**
@@ -61,6 +75,20 @@ public class UserService {
 		user.setCreated(today);
 		user.setModified(null);
 		user.setLast_login(today);
+		JwtUserDTO jwtUser = new JwtUserDTO(user.getId(), user.getEmail());
+		String token = jwtService.getToken(jwtUser);
+		user.setToken(token);
+		userRepository.save(user);
+	}
+
+	/**
+	 * Método responsável por atualizar os dados do usuario a cada Login
+	 * 
+	 * @param user
+	 */
+	public void updateLoginUser(final User user) {
+		user.setLast_login(new Date());
+		user.setModified(new Date());
 		userRepository.save(user);
 	}
 

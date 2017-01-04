@@ -37,8 +37,8 @@ public class User {
 	@Column
 	@JsonSerialize(using = CustomDateSerializer.class)
 	private Date last_login;
-	
-	@Column
+
+	@Column(length = 600)
 	private String token;
 
 	public User() {
