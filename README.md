@@ -2,7 +2,7 @@
 Esta é um Api desenvolvida para um desafio na linguagem JAVA
 
 ## Testes e Avaliação da API
-Api Implantada no HEROKU
+API Implantada no HEROKU
 ```
 https://desafioconcretesolutions.herokuapp.com/
 ```
