@@ -30,12 +30,12 @@ import com.desafio.util.DateUtil;
 @RestController
 public class UserController {
 
-	final String INVALID_LOGIN = "Usuário e/ou senha inválidos";
-	final String INVALID_ID = "ID de Usuário inválido ou não encontrado";
-	final String NOT_AUTH = "Não autorizado";
-	final String INVALID_PHONE = "Lista de Telefones possui algum Telefone inválido";
-	final String USER_EXISTS = "E-mail já existente";
-	final String INVALID_SESSION = "Sessão inválida";
+	final String INVALID_LOGIN = "Usuario e/ou senha invalidos";
+	final String INVALID_ID = "ID de Usuario inválido ou nao encontrado";
+	final String NOT_AUTH = "Nao autorizado";
+	final String INVALID_PHONE = "Lista de Telefones possui algum Telefone invalido";
+	final String USER_EXISTS = "E-mail ja existente";
+	final String INVALID_SESSION = "Sessao invalida";
 
 	@Value("${jwt.auth.header}")
 	String authHeader;
