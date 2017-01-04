@@ -1,4 +1,4 @@
-# REST API PARA CADASTRO/LOGIN/LISTAR USUARIOS
+# REST API PARA CADASTRO/LOGIN/LISTAGEM de USUARIOS
 Esta é um Api desenvolvida para um desafio na linguagem JAVA
 
 
